@@ -5,13 +5,17 @@ import Course from '../model/courseModel.js';
 import Feedback from '../model/feedbackModel.js';
 import Question from '../model/questionModel.js';
 import TAModel from '../model/TaModel.js';
-import mongoose from 'mongoose';
+import dotenv from "dotenv";
 
 import { hash } from 'bcrypt';
 import twilio from 'twilio'; // Import Twilio
 
-const sid = "ACd20c0961e10c674a35238bb1b1e488fa";
-const auth_token = "f28213b4ad4f47ca83499349a49e732d";
+dotenv.config();
+
+// const sid = "ACd20c0961e10c674a35238bb1b1e488fa";
+// const auth_token = "f28213b4ad4f47ca83499349a49e732d";
+const sid = process.env.sid;
+const auth_token = process.env.auth_token;
 const twilioClient = twilio(sid, auth_token);
 
 // Helper function to generate enrollment number
