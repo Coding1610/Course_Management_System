@@ -12,10 +12,9 @@ import twilio from 'twilio'; // Import Twilio
 
 dotenv.config();
 
-// const sid = "ACd20c0961e10c674a35238bb1b1e488fa";
-// const auth_token = "f28213b4ad4f47ca83499349a49e732d";
-const sid = process.env.sid;
-const auth_token = process.env.auth_token;
+const sid = "ACd20c0961e10c674a35238bb1b1e488fa";
+const auth_token = "f28213b4ad4f47ca83499349a49e732d";
+
 const twilioClient = twilio(sid, auth_token);
 
 // Helper function to generate enrollment number
