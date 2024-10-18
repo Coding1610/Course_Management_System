@@ -1,0 +1,29 @@
+{
+    "enrollment": 12345678,
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "contact": 9876543210,
+    "gender": "Male",
+    "aadharNumber": 123412341234,
+    "guardianNumber": 9123456789,
+    "guardianEmail": "guardian@example.com",
+    "isPhysicalHandicap": false,
+    "birthPlace": "New York",
+    "admissionThrough": "Entrance Exam",
+    "casteCategory": "General",
+    "branch": "Computer Science",
+    "address": {
+      "addr": "123 Main Street",
+      "city": "New York",
+      "state": "NY",
+      "country": "USA",
+      "pinCode": 10001
+    },
+    "classAttended": 45,
+    "upcomingDeadlines": {
+      "assignment1": "2024-10-20",
+      "projectSubmission": "2024-11-15"
+    }
+  }
+  

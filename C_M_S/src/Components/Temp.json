@@ -1,0 +1,42 @@
+{
+    "semester": "Fall 2024",
+    "year": "2024-2025",
+    "completedCourses": 4,
+    "remainingCourses": 2,
+    "upcomingQuizzes": 3,
+    "classesAttended": 38,
+    "course": "Computer Science",
+    "courseId": "CS2024",
+    "semesterProgress": 25,
+    "completedLectures": 105,
+    "totalLectures": 140,
+    "upcomingEvaluations": [
+      {
+        "type": "Midterm Exam",
+        "date": "2024-11-10"
+      },
+      {
+        "type": "Project Presentation",
+        "date": "2024-11-20"
+      },
+      {
+        "type": "Final Exam",
+        "date": "2024-12-15"
+      }
+    ],
+    "upcomingDeadlines": [
+      {
+        "project": "Database Management Assignment",
+        "date": "2024-10-25"
+      },
+      {
+        "project": "AI Project Submission",
+        "date": "2024-11-05"
+      },
+      {
+        "project": "Web Development Final Project",
+        "date": "2024-11-18"
+      }
+    ]
+  }
+  

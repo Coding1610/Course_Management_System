@@ -52,21 +52,22 @@ const Login = () => {
         localStorage.setItem('userRole', response.data.role);
     
         // Redirect based on user role
-        const role = response.data.role;
-        switch (role) {
-          case 'admin':
-            navigate('/admin-dashboard');
-            break;
-          case 'faculty':
-            navigate('/faculty-dashboard');
-            break;
-          case 'student':
-            navigate('/student-dashboard');
-            break;
-          default:
-            navigate('/landing-page'); // Fallback if role is invalid
-            break;
-        }
+        // const role = response.data.role;
+        // switch (role) {
+        //   case 'admin':
+        //     navigate('/admin-dashboard');
+        //     break;
+        //   case 'faculty':
+        //     navigate('/faculty-dashboard');
+        //     break;
+        //   case 'student':
+        //     navigate('/');
+        //     break;
+        //   default:
+        //     navigate('/landing-page'); 
+        //     break;
+        // }
+        navigate('/')
     }
     
     } catch (error) {

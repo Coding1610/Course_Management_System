@@ -211,21 +211,6 @@ export const forgotPassword = async (req, res) => {
     }
 };
 
-// Get User Controller
-export const getUser = async (req, res) => {
-    const userId = req.userId; // userId is set in the verifyToken middleware
-
-    try {
-        const user = await User.findById(userId).select('-password'); // Exclude password from the response
-        if (!user) {
-            return res.status(404).json({ message: "User not found" });
-        }
-        res.json(user);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Server error" });
-    }
-};
 
 // const salt = await bcrypt.genSalt(10);
 // const hashedPassword1 = await bcrypt.hash('adminPass456', salt);
