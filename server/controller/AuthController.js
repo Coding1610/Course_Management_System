@@ -24,7 +24,7 @@ export const login = async (req, res) => {
         }
 
         // Handle role-based responses first
-        if (user.role === "admin" || user.role === "faculty") {
+        if (user.role === "master-admin" || user.role === "academic-admin" || user.role === "finance-admin" || user.role === "faculty") {
             // Prompt for security code if role is admin or faculty
             return res.json({ message: "prompt-security-code", securityCodeRequired: true, role: user.role });
         } 
@@ -51,7 +51,7 @@ export const verifySecurityCode = async (req, res) => {
     const { user_id, securityCode } = req.body;
 
     try {
-        const user = await User.findOne({ user_id, role: { $in: ["admin", "faculty"] } });
+        const user = await User.findOne({ user_id, role: { $in: ["master-admin", "academic-admin", "finance-admin", "faculty"] } });
         if (!user) {
             return res.status(400).json({ message: "User not found" });
         }
@@ -213,5 +213,5 @@ export const forgotPassword = async (req, res) => {
 
 
 // const salt = await bcrypt.genSalt(10);
-// const hashedPassword1 = await bcrypt.hash('adminPass456', salt);
+// const hashedPassword1 = await bcrypt.hash('abc123', salt);
 // console.log(hashedPassword1);

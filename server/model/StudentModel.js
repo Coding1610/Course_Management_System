@@ -1,12 +1,15 @@
 import mongoose from "mongoose";
 
 const StudentSchema = new mongoose.Schema({
+  image_url: {
+    type: String,
+    required: true,
+  },
   enrollment: {
     type: Number,
     required: true,
     unique: true,
   },
-
   FirstName: {
     type: String,
     required: true,
@@ -20,11 +23,14 @@ const StudentSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  CollegeEmail: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   Contact: {
     type: Number,
     required: true,
-    unique: true,
-    max: 10,
   },
   Gender: {
     type: String,
@@ -49,32 +55,58 @@ const StudentSchema = new mongoose.Schema({
     AdmissionThrough: { type: String },
     CasteCategory: { type: String },
   },
-  Branch: {
-    type: String,
+  Academic_info: {
+    Degree:{type: String, required: true},
+    Branch: { type: String, required: true },
+    Semester: { type: Number },
+    Total_Courses: { type: Number, default: 0 },
+    Enroll_Year: { type: Number },
+    isTA: { type: Boolean, default: false }
   },
-  Address:{
-    Addr:{type:String},
-    City:{type:String},
-    State:{type:String},
-    Country:{type:String},
-    PinCode:{type:Number}
+  Address: {
+    Addr: { type: String },
+    City: { type: String },
+    State: { type: String },
+    Country: { type: String },
+    PinCode: { type: Number }
   },
-  CourseCompleted:{
-    type:Object,    
+  CourseCompleted: {
+    type: [
+      {
+        Course_Id: Number,
+        Course_Name: String,
+        faculty_Id: Number,
+        faculty_Name: String,
+      }
+    ],
+    default: []
   },
-  ClassAttended:{
-    type:Number,
+  UpcomingDeadlines: {
+    type: [
+      {
+        heading: String,
+        description: String,
+        date: Date
+      }
+    ],
+    default: []
   },
-  UpcomingDeadlines:{
-    type:Object,
+  Courses: {
+    type: [
+      {
+        Course_Id: Number,
+        Course_Name: String,
+        faculty_Id: Number,
+        faculty_Name: String,
+        lectures: Number,
+        lectures_attended: Number,
+        enroll_req_accepted: Boolean,
+      }
+    ],
+    default: []
   },
-  Courses:{
-    faculty_Id,
-    Course_Id
-  }
-  
 });
 
-const Student = new mongoose.model("StudentSchema",StudentSchema)
+const Student = new mongoose.model("students", StudentSchema);
 
-export default Student
+export default Student;
