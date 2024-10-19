@@ -227,7 +227,7 @@ const FacultyForm = () => {
           <option value="Female">Female</option>
           <option value="Other">Other</option>
         </select>
-        <label>Branch:</label>
+        <label>department:</label>
         <select
           name="department"
           value={faculty.department}

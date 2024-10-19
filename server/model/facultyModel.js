@@ -5,7 +5,7 @@ const facultySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  facultyId: { type: String, required: true },
+  facultyId: { type: Number, required: true },
   FirstName: {
     type: String,
     required: true,
